@@ -11,5 +11,5 @@ services:
     ports:
       - "9000:9000"                    # Port for MinIO API
       - "9001:9001"                    # Port for the admin console
-    restart: always                    # Automatically restart the container
+    restart: always                    # Automatically restart the container.
     command: server /data --address ":9000" --console-address ":9001"
