@@ -4,12 +4,12 @@ services:
     image: minio/minio
     container_name: minio
     environment:
-      MINIO_ROOT_USER: minioadmin      # Clave de acceso (Access Key)
-      MINIO_ROOT_PASSWORD: minioadminpassword  # Clave secreta (Secret Key)
+      MINIO_ROOT_USER: minioadmin      # Access Key
+      MINIO_ROOT_PASSWORD: minioadminpassword  # Secret Key
     volumes:
-      - ./data:/data                   # Mapea el almacenamiento en tu máquina local
+      - ./data:/data                   # Maps storage on your local machine
     ports:
-      - "9000:9000"                    # Puerto para la API de MinIO
-      - "9001:9001"                    # Puerto para la consola de administración
-    restart: always                    # Reiniciar el contenedor automáticamente
-    command: server /data --console-address ":9001"
+      - "9000:9000"                    # Port for MinIO API
+      - "9001:9001"                    # Port for the admin console
+    restart: always                    # Automatically restart the container
+    command: server /data --address ":9000" --console-address ":9001"
